@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TIMELESS — Checkout</title>
+
+    <link rel="stylesheet"
+          href="checkout.css">
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <a href="index.html"
+           class="logo">
+
+            TIMELESS
+
+        </a>
+
+        <a href="index.html"
+           class="back">
+
+            ← Continue Shopping
+
+        </a>
+
+    </header>
+
+
+
+    <main class="checkout-container">
+
+
+        <!-- FORM -->
+
+        <section class="form-section">
+
+            <h1>
+                CHECKOUT
+            </h1>
+
+
+            <h2>
+                Contact Information
+            </h2>
+
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name">
+
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number">
+
+
+            <h2>
+                Delivery Address
+            </h2>
+
+
+            <input
+                type="text"
+                id="address"
+                placeholder="Street Address">
+
+
+            <div class="two-inputs">
+
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="City">
+
+                <input
+                    type="text"
+                    id="postal"
+                    placeholder="Postal Code">
+
+            </div>
+
+
+            <h2>
+                Delivery
+            </h2>
+
+
+            <div class="delivery-option">
+
+                <input
+                    type="radio"
+                    checked>
+
+                <div>
+
+                    <strong>
+                        Standard Delivery
+                    </strong>
+
+                    <p>
+                        Delivery in 2–5 business days
+                    </p>
+
+                </div>
+
+                <span>
+                    7.000 TND
+                </span>
+
+            </div>
+
+
+            <h2>
+                Payment
+            </h2>
+
+
+            <div class="payment-option">
+
+                <input
+                    type="radio"
+                    checked>
+
+                <div>
+
+                    <strong>
+                        Cash on Delivery
+                    </strong>
+
+                    <p>
+                        Pay when you receive your order.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="place-order"
+                onclick="placeOrder()">
+
+                PLACE ORDER
+
+            </button>
+
+        </section>
+
+
+
+        <!-- ORDER SUMMARY -->
+
+        <section class="summary">
+
+            <h2>
+                YOUR ORDER
+            </h2>
+
+
+            <div id="checkout-items">
+            </div>
+
+
+            <div class="summary-line">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <span id="subtotal">
+                    0.000 TND
+                </span>
+
+            </div>
+
+
+            <div class="summary-line">
+
+                <span>
+                    Delivery
+                </span>
+
+                <span>
+                    7.000 TND
+                </span>
+
+            </div>
+
+
+            <div class="summary-total">
+
+                <strong>
+                    TOTAL
+                </strong>
+
+                <strong id="checkout-total">
+                    0.000 TND
+                </strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="checkout.js"></script>
+
+</body>
+
+</html>

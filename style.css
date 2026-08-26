@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #111;
+    background: white;
+}
+
+
+/* HEADER */
+
+header {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    text-decoration: none;
+    color: black;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.bag-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+/* HERO */
+
+.hero {
+    height: 85vh;
+
+    /* PUT YOUR HERO PHOTO URL HERE */
+
+    background-image: url("1031042908459191127.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+.hero-text {
+    color: white;
+}
+
+.hero-text p {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-text h1 {
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: .9;
+}
+
+.hero-text button {
+    margin-top: 35px;
+    padding: 16px 40px;
+    background: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-text button:hover {
+    background: black;
+    color: white;
+}
+
+
+/* SHOP */
+
+.shop {
+    padding: 90px 5%;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.title h2 {
+    font-size: 25px;
+}
+
+.title span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.product:hover .image img {
+    transform: scale(1.03);
+}
+
+.product h3 {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.product p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.add {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+.add:hover {
+    background: #333;
+}
+
+
+/* BANNER */
+
+.banner {
+    height: 550px;
+
+    /* PUT YOUR BANNER PHOTO URL HERE */
+
+    background-image: url("37647346881083185.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+}
+
+.banner p {
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.banner h2 {
+    font-size: 58px;
+    line-height: .95;
+    margin: 20px 0 30px;
+}
+
+.banner button {
+    padding: 15px 35px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ABOUT */
+
+.about {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.about > p:first-child {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.about h2 {
+    font-size: 65px;
+    line-height: .95;
+}
+
+.about-text {
+    max-width: 500px;
+    margin: 35px auto 0;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* NEWSLETTER */
+
+.newsletter {
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 35px;
+}
+
+.newsletter p {
+    color: #666;
+    margin: 15px 0 30px;
+}
+
+.newsletter input {
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+.newsletter button {
+    padding: 15px 25px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #111;
+    color: white;
+    padding: 70px 5% 30px;
+}
+
+footer h2 {
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+}
+
+footer > p {
+    color: #aaa;
+}
+
+.footer-links {
+    display: flex;
+    gap: 100px;
+    margin-top: 50px;
+}
+
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links h4 {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.copyright {
+    margin-top: 60px;
+    font-size: 12px;
+}
+
+
+/* CART */
+
+.cart {
+    position: fixed;
+    right: -420px;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    padding: 30px;
+    box-shadow: -5px 0 20px #0002;
+    transition: .4s;
+}
+
+.cart.open {
+    right: 0;
+}
+
+.cart-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.cart-top button {
+    border: none;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.cart-item button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.checkout {
+    width: 100%;
+    padding: 17px;
+    margin-top: 20px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .cart {
+        width: 100%;
+    }
+
+    .banner h2 {
+        font-size: 42px;
+    }
+
+    .about h2 {
+        font-size: 45px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+}
