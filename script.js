@@ -1,3 +1,13 @@
+// ==========================================
+// SUPABASE SETUP
+// ==========================================
+
+const SUPABASE_URL = "https://eifopqgdiqmgowyqurpm.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVpZm9wcWdkaXFtZ293eXF1cnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg1MjAwNTEsImV4cCI6MjEwNDA5NjA1MX0.Pxp996BTgaLfYww0mJfBvyH-HWNMPuh195pcILgEuXk";
+
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
 let cart =
     JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -131,21 +141,32 @@ function goToShop() {
 
 // NEWSLETTER
 
-function subscribe() {
+async function subscribe() {
 
-    const email =
-        document.getElementById("email").value.trim();
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value.trim();
 
     if (email === "") {
-
         alert("Please enter your email.");
-
         return;
     }
 
-    alert("Welcome to TIMELESS! ✨");
+    const { error } = await supabaseClient
+        .from("subscribers")
+        .insert({ email: email });
 
-    document.getElementById("email").value = "";
+    if (error) {
+        if (error.code === "23505") {
+            alert("You're already part of the TIMELESS family! ✨");
+        } else {
+            alert("Something went wrong, please try again.");
+            console.error(error);
+        }
+        return;
+    }
+
+    alert("Welcome to TIMELESS! ✨ Check your inbox soon.");
+    emailInput.value = "";
 }
 
 

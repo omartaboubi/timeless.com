@@ -1,4 +1,14 @@
 // ==========================================
+// SUPABASE SETUP
+// ==========================================
+
+const SUPABASE_URL = "https://eifopqgdiqmgowyqurpm.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVpZm9wcWdkaXFtZ293eXF1cnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg1MjAwNTEsImV4cCI6MjEwNDA5NjA1MX0.Pxp996BTgaLfYww0mJfBvyH-HWNMPuh195pcILgEuXk";
+
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+
+// ==========================================
 // GET CART
 // ==========================================
 
@@ -118,7 +128,7 @@ function displayOrder() {
 // PLACE ORDER
 // ==========================================
 
-function placeOrder() {
+async function placeOrder() {
 
     const name =
         document
@@ -144,6 +154,13 @@ function placeOrder() {
     const city =
         document
             .getElementById("city")
+            .value
+            .trim();
+
+
+    const postal =
+        document
+            .getElementById("postal")
             .value
             .trim();
 
@@ -186,6 +203,33 @@ function placeOrder() {
 
     const total =
         subtotal + deliveryPrice;
+
+
+    const { error } = await supabaseClient
+        .from("orders")
+        .insert({
+            name: name,
+            phone: phone,
+            address: address,
+            city: city,
+            postal: postal,
+            items: cart,
+            subtotal: subtotal,
+            delivery: deliveryPrice,
+            total: total
+        });
+
+
+    if (error) {
+
+        alert(
+            "Something went wrong placing your order, please try again."
+        );
+
+        console.error(error);
+
+        return;
+    }
 
 
     alert(
