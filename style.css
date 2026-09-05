@@ -64,8 +64,6 @@ nav a:hover {
 .hero {
     height: 85vh;
 
-    /* PUT YOUR HERO PHOTO URL HERE */
-
     background-image: url("1031042908459191127.jpg");
 
     background-size: cover;
@@ -187,8 +185,6 @@ nav a:hover {
 
 .banner {
     height: 550px;
-
-    /* PUT YOUR BANNER PHOTO URL HERE */
 
     background-image: url("37647346881083185.jpg");
 
@@ -384,6 +380,26 @@ footer > p {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+
+/* SOLD OUT */
+
+.product.sold-out .image img {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+.sold-out-label {
+    color: #999;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.product.sold-out .add {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
 }
 
 

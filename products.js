@@ -182,6 +182,51 @@ const products = {
 
         ]
 
+    },
+
+
+    // ==========================================
+    // PRODUCT 5
+    // ==========================================
+
+    ring1: {
+
+        name:
+            "Sculpted Open Ring",
+
+        price:
+            10.000,
+
+        category:
+            "RINGS",
+
+        description:
+            "A sculptural open ring with an organic, hammered silver finish — a bold, artisanal statement piece with a molten, one-of-a-kind look.",
+
+        images: [
+
+            "ring1.jpg",
+
+            "ring2.jpg",
+
+            "ring3.jpg",
+
+            "ring4.jpg"
+
+        ],
+
+        details: [
+
+            "Adjustable open-back design",
+
+            "Hammered, sculptural finish",
+
+            "Sterling silver look",
+
+            "Unisex, one-size-fits-most"
+
+        ]
+
     }
 
 };
