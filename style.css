@@ -438,4 +438,9 @@ footer > p {
         flex-wrap: wrap;
         gap: 40px;
     }
+    .sold-out-btn {
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+}
 }

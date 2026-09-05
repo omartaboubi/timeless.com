@@ -20,6 +20,8 @@ const products = {
         category:
             "BRACELETS",
 
+        soldOut: true,
+
         description:
             "A timeless hammered cuff bracelet featuring an elegant engraved detail.",
 
@@ -154,6 +156,8 @@ const products = {
 
         category:
             "BRACELETS",
+
+        soldOut: true,
 
         description:
             "A beautiful Islamic-inspired bracelet with an elegant and timeless design.",
@@ -342,6 +346,25 @@ if (product) {
         }
     );
 
+
+
+    // SOLD OUT CHECK
+
+    if (product.soldOut) {
+
+        const addButton =
+            document.getElementById("add-to-bag-btn");
+
+        if (addButton) {
+
+            addButton.textContent = "SOLD OUT";
+            addButton.disabled = true;
+            addButton.classList.add("sold-out-btn");
+
+        }
+
+    }
+
 }
 
 
@@ -366,6 +389,11 @@ function changeImage(image) {
 function addProductToBag() {
 
     if (!product) {
+        return;
+    }
+
+    if (product.soldOut) {
+        alert("Sorry, this item is sold out.");
         return;
     }
 
